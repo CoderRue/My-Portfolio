@@ -177,7 +177,7 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -269,7 +269,7 @@
             <div class="project-item">
                 <h4>Project Title : Personal Web Portfolio</h4>
                 <p>Technologies used include HTML, CSS, JS, PHP .</p>
-                <p><a href="#" class="btn btn-sm btn-custom-pink">View Project </a> <a href="https://github.com/CoderRue" class="btn btn-sm btn-outline-dark">View Code (GitHub)</a></p>
+                <p><a href="C:\Users\HP ELITEBOOK 840\Desktop\Portfolio number 2\hey.html" class="btn btn-sm btn-custom-pink">View Project </a> <a href="https://github.com/CoderRue" class="btn btn-sm btn-outline-dark">View Code (GitHub)</a></p>
             </div>
            
             <h3 class="mt-5 mb-3">Future Projects / Ideas</h3>
@@ -279,7 +279,7 @@
             </div>
              <div class="project-item">
                 <h4>Future Project Idea 2</h4>
-                <p>Use of piezoelectric discs in generating/harnessing kinetic energy to produce electricity</p>
+                <p>Online micro-credit platform</p>
             </div>
             </div>
     </section>
@@ -354,13 +354,17 @@
         const thankYouMessageDiv = document.getElementById('thankYouMessage');
 
         if (getInTouchButton) {
-            getInTouchButton.addEventListener('click', function() {
+            getInTouchButton.addEventListener('click', function(){
                 thankYouMessageDiv.textContent = 'Thank you for your interest!';
+
+            }
+                
+            )}
                
                 setTimeout(() => {
                     thankYouMessageDiv.textContent = ''; 
                 }, 5000);
-        }
+            
 
         
         const currentYearSpan = document.getElementById('currentYear');
