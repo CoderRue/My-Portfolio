@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        :root {
+            --blush-pink-light: #fff0f5; 
+            --blush-pink-medium: #ffe4e1; 
+            --hot-pink: #ff69b4;         
+            --dark-text: #333;
+            --light-text: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--blush-pink-light);
+            color: var(--dark-text);
+            margin-top: 70px; 
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--hot-pink);
+            font-weight: 600;
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        .shadowed-box {
+            background-color: var(--blush-pink-medium);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .shadowed-box:hover {
+            transform: translateY(-5px);
+        }
+
+        
+        .sticky-header {
+            background-color: var(--blush-pink-medium);
+            padding: 10px 0;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .sticky-header .navbar-brand {
+            color: var(--hot-pink);
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        .sticky-header .nav-link {
+            color: var(--dark-text);
+            margin: 0 10px;
+            padding: 8px 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .sticky-header .nav-link:hover,
+        .sticky-header .nav-link.active {
+            background-color: var(--hot-pink);
+            color: var(--light-text);
+        }
+
+        
+        #about .profile-pic-container {
+            text-align: center; 
+        }
+        #about img.profile-pic {
+            width: 200px; 
+            height: 200px; 
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--hot-pink);
+            box-shadow: 0 4px 10px var(--shadow-color);
+            margin-bottom: 20px; 
+        }
+
+   
+        #skills ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        #skills li {
+            background-color: var(--blush-pink-light);
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border-left: 5px solid var(--hot-pink);
+        }
+
+       
+        .project-item {
+            background-color: var(--blush-pink-light);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 1px solid var(--hot-pink);
+        }
+        .project-item h4 {
+            color: var(--hot-pink);
+        }
+
+        .social-icons a {
+            color: var(--dark-text);
+            font-size: 2rem; 
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--hot-pink);
+            transform: scale(1.2);
+        }
+
+        .btn-custom-pink {
+            background-color: var(--hot-pink);
+            color: var(--light-text);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-custom-pink:hover {
+            background-color: #ff47a6; 
+            color: var(--light-text);
+            transform: translateY(-3px);
+        }
+
+        #thankYouMessage {
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--hot-pink);
+        }
+
+       
+        footer {
+            background-color: var(--blush-pink-medium);
+            color: var(--dark-text);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            box-shadow: 0 -4px 15px var(--shadow-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <nav class="navbar navbar-expand-lg container">
+            <a class="navbar-brand" href="#">MyPortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="container section-padding text-center">
+        <div class="shadowed-box">
+             <h1>Welcome to My Digital Space!</h1>
+             <p class="lead">Discover my journey, skills and projects in computer science.</p>
+        </div>
+    </section>
+
+    <section id="about" class="container section-padding">
+        <div class="shadowed-box">
+            <h2 class="text-center mb-4">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="C:\Users\HP ELITEBOOK 840\Desktop\porfolio pic.jpg" alt="Your Name" class="profile-pic" onerror="this.src='https://placehold.co/200x200/FFC0CB/333333?text=Your+Photo';">
+                    <p class="mt-2"><em>Rutendo Millicent Mutambu<br> Computer Science Student| ENACTUS Member| GDG Core-Organizer</br></em></p>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Hello! My name is Rutendo.I'm a passionate and dedicated Year 2 Computer Science student.
+                        I have a strong interest in web development, software engineering, and exploring new technologies.
+                        This portfolio is a showcase of my journey, skills, and the projects I've worked on.
+                        I'm always eager to learn and take on new challenges.
+                    </p>
+                    <p>
+                        My goal is to leverage my skills to create innovative solutions and contribute to impactful projects.
+                        When I'm not coding, I enjoy reading books, listening to podcasts and hiking.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="container section-padding">
+        <div class="shadowed-box">
+            <h2 class="text-center mb-4">Education</h2>
+            <div class="mb-3">
+                <h4>Midlands State University</h4>
+                <p><strong>Degree Program:</strong> BSc (Hons) Computer Science</p>
+                <p><strong>Expected Graduation:</strong>November 2028</p>
+                <p><em>Relevant Coursework: Data Structures, Algorithms, Web Development, Database Management </em></p>
+            </div>
+            
+           
+        </div>
+    </section>
+
+    <section id="skills" class="container section-padding">
+        <div class="shadowed-box">
+            <h2 class="text-center mb-4">Skills</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS(Intermediate)</li>
+                        <li>PHP (Basic)</li>
+                        <li>Python</li>
+                        <li>Java(Basic)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Tools & Technologies</h4>
+                    <ul>
+                        <li>Bootstrap</li>
+                        <li>Git & GitHub</li>
+                        <li>VS Code</li>
+                        <li>MySQL </li>
+                        <li>Canva(for design)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container section-padding">
+        <div class="shadowed-box">
+            <h2 class="text-center mb-4">My Projects</h2>
+            
+            <h3 class="mt-4 mb-3">Completed Projects</h3>
+            <div class="project-item">
+                <h4>Project Title : Personal Web Portfolio</h4>
+                <p>Technologies used include HTML, CSS, JS, PHP .</p>
+                <p><a href="#" class="btn btn-sm btn-custom-pink">View Project </a> <a href="https://github.com/CoderRue" class="btn btn-sm btn-outline-dark">View Code (GitHub)</a></p>
+            </div>
+           
+            <h3 class="mt-5 mb-3">Future Projects / Ideas</h3>
+             <div class="project-item">
+                <h4>Future Project Idea 1</h4>
+                <p> A device that controls multiple household appliances whilst monitoring the performance levels and is able to report challenges.</p>
+            </div>
+             <div class="project-item">
+                <h4>Future Project Idea 2</h4>
+                <p>Use of piezoelectric discs in generating/harnessing kinetic energy to produce electricity</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="contact" class="container section-padding">
+        <div class="shadowed-box text-center">
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Feel free to reach out! I'm always open to discussing new projects, creative ideas or opportunities.</p>
+            
+            <div class="social-icons my-4">
+                <a href="https://github.com/CoderRue?tab=repositories" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/rutendomillicentmutambu/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" title="Gmail"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <button id="getInTouchBtn" class="btn btn-custom-pink btn-lg">Get in Touch!</button>
+            <div id="thankYouMessage" class="mt-3"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Rutendo Millicent Mutambu. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+       
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll(".sticky-header .navbar-nav .nav-item .nav-link");
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 80) { 
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.getAttribute("href") === `#${current}`) {
+                    li.classList.add("active");
+                }
+            });
+         
+            if (!current && pageYOffset < sections[0].offsetTop - 80) {
+                 const homeLink = document.querySelector('.sticky-header .navbar-nav .nav-item .nav-link[href="#home"]');
+                 if(homeLink) homeLink.classList.add("active");
+            }
+        });
+
+
+        
+        const getInTouchButton = document.getElementById('getInTouchBtn');
+        const thankYouMessageDiv = document.getElementById('thankYouMessage');
+
+        if (getInTouchButton) {
+            getInTouchButton.addEventListener('click', function() {
+                thankYouMessageDiv.textContent = 'Thank you for your interest!';
+               
+                setTimeout(() => {
+                    thankYouMessageDiv.textContent = ''; 
+                }, 5000);
+        }
+
+        
+        const currentYearSpan = document.getElementById('currentYear');
+        if (currentYearSpan) {
+            currentYearSpan.textContent = new Date().getFullYear();
+        }
+
+       
+    </script>
+
+</body>
+</html>
